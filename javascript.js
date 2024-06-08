@@ -20,7 +20,12 @@ function resizeGrid(event){
     console.log(sketch_area);
     sketch_area.querySelectorAll(".square").forEach((event)=>event.parentNode.removeChild(event));
     let n = prompt("enter the number of squares per side.");
-    drawBoard(n);
+    if(n>100){
+        alert("pick a number between 0-100.");
+    }
+    else{     
+        drawBoard(n);
+    }
 }
 
 function drawBoard(size){
